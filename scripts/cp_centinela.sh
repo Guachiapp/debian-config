@@ -8,8 +8,8 @@ rm /etc/nginx/sites-available/centinela.conf
 
 echo "Archivo centinela.conf Eliminado."
 
-echo "Copiar archivo /home/codes/debian-config/nginx/centinela.conf en /etc/nginx/sites-available/centinela.conf"
-cp /home/codes/debian-config/nginx/centinela.conf  /etc/nginx/sites-available/centinela.conf
+echo "Copiar archivo /home/guachi/codes/debian-config/nginx/centinela.conf en /etc/nginx/sites-available/centinela.conf"
+cp /home/guachi/codes/debian-config/nginx/centinela.conf  /etc/nginx/sites-available/centinela.conf
 echo "Archivo centinela.conf copiado."
 
 echo "Crear un enlace simbolico a sites-available para centinela.conf"

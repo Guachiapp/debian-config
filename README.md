@@ -5,7 +5,7 @@
 Copiar el archivo con la configuración para servicios
 
 ```
-cp /root/codes/debian-config/centinela.service /etc/systemd/system/centinela.service
+sudo cp /home/guachi/codes/debian-config/centinela.service /etc/systemd/system/centinela.service
 ```
 
 Verificar copiado
