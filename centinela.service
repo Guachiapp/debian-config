@@ -1,0 +1,15 @@
+    [Unit]
+    Description=My Uvicorn Centinela FastAPI
+    After=network.target
+
+    [Service]
+    User=guachi
+    Group=guachi
+    WorkingDirectory=/home/guachi/codes/python/projects/api-centinela
+    ExecStart=/home/guachi/codes/python/environments/centinela/bin/gunicorn src.main:app -c src/config/gunicorn_fastapi.conf.py
+    Restart=always
+    RestartSec=3
+    Environment=PYTHONUNBUFFERED=1
+
+    [Install]
+    WantedBy=multi-user.target
