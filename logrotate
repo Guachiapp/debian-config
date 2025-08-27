@@ -1,0 +1,31 @@
+sudo nano /etc/logrotate.d/centinela
+
+/var/log/gunicorn/centinela/access.log {
+    daily
+    rotate 30
+    missingok
+    notifempty
+    copytruncate
+    dateext
+    dateformat %Y%m%d_access.log
+    create 0640 guachi guachi
+    # compress
+    # delaycompress
+}
+
+/var/log/gunicorn/centinela/error.log {
+    daily
+    rotate 30
+    missingok
+    notifempty
+    copytruncate
+    dateext
+    dateformat %Y%m%d_error.log
+    create 0640 guachi guachi
+    # compress
+    # delaycompress
+}
+
+
+sudo logrotate -d /etc/logrotate.d/centinela
+sudo logrotate -f -v /etc/logrotate.d/centinela
