@@ -7,7 +7,7 @@ sudo nano /etc/logrotate.d/centinela
     notifempty
     copytruncate
     dateext
-    dateformat %Y%m%d_access.log
+    dateformat -%Y%m%d
     create 0640 guachi guachi
     # compress
     # delaycompress
@@ -20,12 +20,15 @@ sudo nano /etc/logrotate.d/centinela
     notifempty
     copytruncate
     dateext
-    dateformat %Y%m%d_error.log
+    dateformat -%Y%m%d
     create 0640 guachi guachi
     # compress
     # delaycompress
 }
 
-
 sudo logrotate -d /etc/logrotate.d/centinela
 sudo logrotate -f -v /etc/logrotate.d/centinela
+
+ls -ltr
+
+rm /var/log/gunicorn/centinela/*202508*.log
