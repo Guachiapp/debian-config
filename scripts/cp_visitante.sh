@@ -12,8 +12,9 @@ echo "Copiar archivo /home/guachi/codes/debian-config/nginx/visitante.conf en /e
 cp /home/guachi/codes/debian-config/nginx/visitante.conf  /etc/nginx/sites-available/visitante.conf
 echo "Archivo visitante.conf copiado."
 
-echo "Crear un enlace simbolico a sites-available para visitante.conf"
-ln -s /etc/nginx/sites-available/visitante.conf /etc/nginx/sites-enabled/
+#SOLO LA PRIMERA VEZ
+#echo "Crear un enlace simbolico a sites-available para visitante.conf"
+#ln -s /etc/nginx/sites-available/visitante.conf /etc/nginx/sites-enabled/
 
 sleep 1
 

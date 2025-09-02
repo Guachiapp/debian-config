@@ -12,8 +12,9 @@ echo "Copiar archivo /home/guachi/codes/debian-config/nginx/centinela.conf en /e
 cp /home/guachi/codes/debian-config/nginx/centinela.conf  /etc/nginx/sites-available/centinela.conf
 echo "Archivo centinela.conf copiado."
 
-echo "Crear un enlace simbolico a sites-available para centinela.conf"
-ln -s /etc/nginx/sites-available/centinela.conf /etc/nginx/sites-enabled/
+#SOLO LA PRIMERA VEZ
+#echo "Crear un enlace simbolico a sites-available para centinela.conf"
+#ln -s /etc/nginx/sites-available/centinela.conf /etc/nginx/sites-enabled/
 
 sleep 1
 
