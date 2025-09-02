@@ -1,0 +1,36 @@
+
+1. Crear directorio público en /srv
+sudo mkdir -p /srv/guachi
+
+2. Crear enlace simbólico hacia la carpeta servible
+sudo ln -s /home/guachi/files/visitas /srv/guachi/visitas
+
+3. Ajustar permisos mínimos para acceso
+chmod o+x /home
+chmod o+x /home/guachi
+chmod o+x /home/guachi/files
+chmod o+x /home/guachi/files/visitas
+chmod o+r /home/guachi/files/visitas/*  # si los archivos no son legibles por www-data
+
+4. Configurar Nginx
+
+Agrega este bloque:
+
+location /media/ {
+    alias /srv/guachi/visitas/;
+
+    autoindex off;
+    add_header X-Content-Type-Options nosniff;
+    add_header Cache-Control "no-store, no-cache, must-revalidate, proxy-revalidate, max-age=0";
+    add_header Pragma "no-cache";
+    add_header Expires "0";
+
+    location ~* \.(jpg|jpeg|png|gif|ico|svg|pdf)$ {
+        allow all;
+        add_header Content-Disposition "inline";
+    }
+
+    location ~ /\. {
+        deny all;
+    }
+}
